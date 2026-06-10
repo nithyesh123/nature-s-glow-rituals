@@ -97,7 +97,7 @@ function Featured() {
                 </ul>
               </div>
               <Button
-                onClick={() => { add(p.id); toast.success(`${p.name} added to basket`); }}
+                onClick={() => add(p.id, { name: p.name, price: p.price, image: productImage(p.id, p.image_url) })}
                 className="mt-6 w-full bg-leaf text-primary-foreground hover:bg-leaf/90"
               >
                 Add to Basket

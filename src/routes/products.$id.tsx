@@ -63,7 +63,7 @@ function ProductDetail() {
             </div>
             <div className="mt-8 flex items-center gap-4">
               <span className="font-display text-3xl text-accent">₹{p.price}</span>
-              <Button onClick={() => { add(p.id); toast.success("Added to basket"); }} className="bg-leaf text-primary-foreground hover:bg-leaf/90">
+              <Button onClick={() => add(p.id, { name: p.name, price: p.price, image: productImage(p.id, p.image_url) })} className="bg-leaf text-primary-foreground hover:bg-leaf/90">
                 Add to Basket
               </Button>
             </div>
