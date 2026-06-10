@@ -50,6 +50,9 @@ function Account() {
       <section className="mx-auto max-w-3xl px-6 py-12">
         <h1 className="font-display text-4xl text-foreground">Welcome back</h1>
         <p className="mt-2 text-muted-foreground">{user.email}</p>
+        <Button onClick={signOut} variant="outline" className="mt-4 glass-card text-foreground hover:bg-white/10">
+          <LogOut className="mr-2 h-4 w-4" /> Sign out
+        </Button>
 
         <h2 className="mt-10 font-display text-2xl text-foreground">Your Orders</h2>
         {orders.length === 0 ? (
