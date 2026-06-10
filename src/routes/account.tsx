@@ -1,4 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useQueryClient } from "@tanstack/react-query";
 import { SiteLayout } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/use-auth";
