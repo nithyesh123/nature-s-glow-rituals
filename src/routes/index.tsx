@@ -14,9 +14,9 @@ import { Leaf, Sparkles, CreditCard, Smartphone, Percent, ShoppingBag } from "lu
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vanaspati — Natural Hair & Face Care from the Forest" },
+      { title: "PraKruthi Vanam — Natural Hair & Face Care from the Forest" },
       { name: "description", content: "Handcrafted ayurvedic hair oils and face pastes made with onion, amla, bhringraj, lemon & rice water. Pure ingredients, forest-fresh." },
-      { property: "og:title", content: "Vanaspati — Natural Hair & Face Care" },
+      { property: "og:title", content: "PraKruthi Vanam — Natural Hair & Face Care" },
       { property: "og:description", content: "Handcrafted ayurvedic hair oils and face pastes. Pure forest ingredients." },
     ],
   }),
@@ -110,7 +110,7 @@ function Home() {
         <header className="flex items-center justify-between px-6 py-5 md:px-12">
           <div className="flex items-center gap-2">
             <Leaf className="h-6 w-6 text-leaf" />
-            <span className="font-display text-2xl tracking-wide text-foreground">Vanaspati</span>
+            <span className="font-display text-2xl tracking-wide text-foreground">PraKruthi Vanam</span>
           </div>
           <nav className="hidden gap-8 text-sm text-muted-foreground md:flex">
             <a href="#products" className="hover:text-foreground">Products</a>
@@ -242,7 +242,7 @@ function Home() {
 
         <footer className="border-t border-border/40 px-6 py-10 text-center text-sm text-muted-foreground">
           <Leaf className="mx-auto mb-2 h-5 w-5 text-leaf" />
-          © {new Date().getFullYear()} Vanaspati Naturals. Brewed with care, in the woods.
+          © {new Date().getFullYear()} PraKruthi Vanam Naturals. Brewed with care, in the woods.
         </footer>
       </div>
     </div>
