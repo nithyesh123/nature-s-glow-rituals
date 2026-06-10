@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vanaspati — Natural Hair & Face Care" },
+      { title: "PraKruthi Vanam — Natural Hair & Face Care" },
       { name: "description", content: "Handcrafted ayurvedic hair oils and face pastes from the forest." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
