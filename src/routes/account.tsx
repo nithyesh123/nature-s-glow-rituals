@@ -23,6 +23,7 @@ export const Route = createFileRoute("/account")({
 function Account() {
   const { user, loading } = useAuth();
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const [orders, setOrders] = useState<Order[]>([]);
 
   useEffect(() => {
@@ -34,6 +35,13 @@ function Account() {
     supabase.from("orders").select("id, total, status, created_at, items").order("created_at", { ascending: false })
       .then(({ data }) => setOrders((data ?? []) as Order[]));
   }, [user]);
+
+  const signOut = async () => {
+    await queryClient.cancelQueries();
+    queryClient.clear();
+    await supabase.auth.signOut();
+    navigate({ to: "/auth", replace: true });
+  };
 
   if (!user) return null;
 
