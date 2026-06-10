@@ -38,7 +38,14 @@ function AuthPage() {
         navigate({ to: "/account" });
       }
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : "Something went wrong");
+      const msg = err instanceof Error ? err.message : "Something went wrong";
+      if (/invalid login credentials/i.test(msg)) {
+        toast.error("Wrong email or password. New here? Create an account first.");
+      } else if (/user already registered/i.test(msg)) {
+        toast.error("Account already exists — switch to Sign in.");
+      } else {
+        toast.error(msg);
+      }
     } finally { setBusy(false); }
   };
 
