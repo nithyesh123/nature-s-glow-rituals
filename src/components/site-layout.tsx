@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "@tanstack/react-router";
+import { useQueryClient } from "@tanstack/react-query";
 import { Leaf, ShoppingBag, User as UserIcon, LogOut, MessageCircle } from "lucide-react";
 import { useCart } from "@/lib/cart";
 import { useAuth } from "@/hooks/use-auth";
@@ -14,10 +15,13 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   const { count } = useCart();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const signOut = async () => {
+    await queryClient.cancelQueries();
+    queryClient.clear();
     await supabase.auth.signOut();
-    navigate({ to: "/" });
+    navigate({ to: "/auth", replace: true });
   };
 
   return (

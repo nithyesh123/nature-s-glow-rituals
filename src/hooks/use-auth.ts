@@ -12,11 +12,23 @@ export function useAuth() {
       setSession(s);
       setUser(s?.user ?? null);
     });
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session);
-      setUser(data.session?.user ?? null);
-      setLoading(false);
+
+    // Validate session with the server on mount so revoked sessions
+    // on other devices are caught immediately.
+    supabase.auth.getUser().then(({ data, error }) => {
+      if (error || !data.user) {
+        setSession(null);
+        setUser(null);
+        setLoading(false);
+        return;
+      }
+      setUser(data.user);
+      supabase.auth.getSession().then(({ data: s }) => {
+        setSession(s.session);
+        setLoading(false);
+      });
     });
+
     return () => sub.subscription.unsubscribe();
   }, []);
 
