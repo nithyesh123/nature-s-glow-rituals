@@ -60,7 +60,7 @@ function ProductsPage() {
                     <li key={i} className="rounded-full bg-moss/30 px-2.5 py-1 text-xs text-foreground/90">{i}</li>
                   ))}
                 </ul>
-                <Button onClick={() => { add(p.id); toast.success(`${p.name} added`); }}
+                <Button onClick={() => add(p.id, { name: p.name, price: p.price, image: productImage(p.id, p.image_url) })}
                   className="mt-5 w-full bg-leaf text-primary-foreground hover:bg-leaf/90">
                   Add to Basket
                 </Button>
