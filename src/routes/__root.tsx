@@ -82,6 +82,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Handcrafted ayurvedic hair oils and face pastes from the forest." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "PraKruthi Vanam — Natural Hair & Face Care" },
+      { name: "twitter:title", content: "PraKruthi Vanam — Natural Hair & Face Care" },
+      { property: "og:description", content: "Handcrafted ayurvedic hair oils and face pastes from the forest." },
+      { name: "twitter:description", content: "Handcrafted ayurvedic hair oils and face pastes from the forest." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8f9feda0-c002-4b9a-851b-4711b68d865d/id-preview-7b7ed5c4--e7798c3b-3dac-4867-b5d0-fb18f16838aa.lovable.app-1781264903163.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8f9feda0-c002-4b9a-851b-4711b68d865d/id-preview-7b7ed5c4--e7798c3b-3dac-4867-b5d0-fb18f16838aa.lovable.app-1781264903163.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
